@@ -1,4 +1,4 @@
-Source: ignition-launch
+Source: ignition-launch2
 Standards-Version: 3.9.4
 Maintainer: Jose Luis Rivero <jrivero@osrfoundation.org>
 Section: science
@@ -20,11 +20,11 @@ Build-Depends: cmake,
                qtquickcontrols2-5-dev,
                libqt5core5a,
                binutils-dev
-Vcs-Browser: https://bitbucket.org/ignitionrobotics/ign-launch-release
-Vcs-Hg: https://bitbucket.org/ignitionrobotics/ign-launch-release
-Homepage: https://bitbucket.org/ignitionrobotics/ign-launch
+Vcs-Browser: https://github.com/ignition-release/ign-launch2-release
+Vcs-Hg: https://github.com/ignition-release/ign-launch2-release
+Homepage: https://github.com/ignition-release/ign-launch2
 
-Package: libignition-launch
+Package: libignition-launch2
 Architecture: any
 Section: libs
 Pre-Depends: ${misc:Pre-Depends}
@@ -32,7 +32,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends}
 Multi-Arch: same
 Description: Ignition Robotics Launch Library - Launch libraries
 
-Package: libignition-launch-dev
+Package: libignition-launch2-dev
 Architecture: any
 Section: libdevel
 Depends: libignition-cmake2-dev,
@@ -48,7 +48,7 @@ Depends: libignition-cmake2-dev,
 	 libwebsockets-dev,
 	 qtquickcontrols2-5-dev,
 	 libqt5core5a,
-	 libignition-launch (= ${binary:Version}),
+	 libignition-launch2 (= ${binary:Version}),
 	 ignition-gazebo2,
          ${misc:Depends}
 Multi-Arch: same
