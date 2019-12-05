@@ -1,6 +1,5 @@
-ignition-launch2 (1.999.999-1~bionic) bionic; urgency=medium
+ignition-launch2 (2.0.0~pre1-1~bionic) bionic; urgency=medium
 
-  * Stub to be removed after first entry
+  * ignition-launch2 2.0.0~pre1-1 release
 
- -- Jose Luis Rivero <jrivero@osrfoundation.org>  Thu, 05 Dec 2019 12:44:55 +0100
-
+ -- Jose Luis Rivero <jrivero@osrfoundation.org>  Thu, 05 Dec 2019 12:45:34 +0100
