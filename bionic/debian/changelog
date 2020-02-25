@@ -1,3 +1,9 @@
+ignition-launch2 (2.0.1-2~bionic) bionic; urgency=medium
+
+  * ignition-launch2 2.0.1-2 release
+
+ -- Jose Luis Rivero <jrivero@osrfoundation.org>  Tue, 25 Feb 2020 16:12:57 +0100
+
 ignition-launch2 (2.0.1-1~bionic) bionic; urgency=medium
 
   * ignition-launch2 2.0.1-1 release
