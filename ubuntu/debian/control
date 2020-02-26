@@ -48,8 +48,7 @@ Depends: libignition-cmake2-dev,
 	 qtquickcontrols2-5-dev,
 	 libqt5core5a,
 	 libignition-launch2 (= ${binary:Version}),
-	 ignition-gazebo3,
-         ${misc:Depends}
+   ${misc:Depends}
 Multi-Arch: same
 Description: Ignition Robotics Launch Library - Launch libraries
   Ignition Common is a component in the ignition framework, a set of libraries
