@@ -1,40 +1,39 @@
-diff -r e7e3aa182d7e src/vendor/backward.hpp
---- a/src/vendor/backward.hpp	Wed Dec 11 01:20:17 2019 +0100
-+++ b/src/vendor/backward.hpp	Mon Apr 13 16:36:43 2020 +0200
-@@ -1233,14 +1233,29 @@
- 	void find_in_section(bfd_vma addr, bfd_vma base_addr,
- 			bfd_fileobject& fobj, asection* section, find_sym_result& result)
- 	{
-+		// are we in the boundaries of the section?
- 		if (result.found) return;
--
--		if ((bfd_get_section_flags(fobj.handle.get(), section)
--					& SEC_ALLOC) == 0)
--			return; // a debug section is never loaded automatically.
--
--		bfd_vma sec_addr = bfd_get_section_vma(fobj.handle.get(), section);
--		bfd_size_type size = bfd_get_section_size(section);
-+		flagword flags;
-+
-+		#ifdef bfd_get_section_flags
-+			flags = bfd_get_section_flags(fobj.handle.get(), section);
-+		#else
-+			flags = bfd_section_flags(section);
-+		#endif
-+			
-+		if ((flags & SEC_ALLOC) == 0)
-+		    return; // a debug section is never loaded automatically.
-+		#ifdef bfd_get_section_vma
-+			bfd_vma sec_addr = bfd_get_section_vma(fobj.handle.get(), section);
-+		#else
-+			bfd_vma sec_addr = bfd_section_vma(section);
-+		#endif
-+
-+		#ifdef bfd_get_section_size
-+			bfd_size_type size = bfd_get_section_size(section);
-+		#else
-+			bfd_size_type size = bfd_section_size(section);
-+		#endif
+diff --git a/src/vendor/backward.hpp b/src/vendor/backward.hpp
+index 413d507..2c79369 100644
+--- a/src/vendor/backward.hpp
++++ b/src/vendor/backward.hpp
+@@ -1235,12 +1235,27 @@ private:
+        {
+                if (result.found) return;
  
- 		// are we in the boundaries of the section?
+-               if ((bfd_get_section_flags(fobj.handle.get(), section)
+-                                       & SEC_ALLOC) == 0)
+-                       return; // a debug section is never loaded automatically.
+-
+-               bfd_vma sec_addr = bfd_get_section_vma(fobj.handle.get(), section);
+-               bfd_size_type size = bfd_get_section_size(section);
++               flagword flags;
++               #ifdef bfd_get_section_flags
++                       flags = bfd_get_section_flags(fobj.handle.get(), section);
++               #else
++                       flags = bfd_section_flags(section);
++               #endif
++
++               if ((flags & SEC_ALLOC) == 0)
++                       return; // a debug section is never loaded automatically.
++
++               #ifdef bfd_get_section_vma
++                       bfd_vma sec_addr = bfd_get_section_vma(fobj.handle.get(), section);
++               #else
++                       bfd_vma sec_addr = bfd_section_vma(section);
++               #endif
++
++               #ifdef bfd_get_section_size
++                       bfd_size_type size = bfd_get_section_size(section);
++               #else
++                       bfd_size_type size = bfd_section_size(section);
++               #endif
+ 
+                // are we in the boundaries of the section?
+                if (addr < sec_addr || addr >= sec_addr + size) {
 
