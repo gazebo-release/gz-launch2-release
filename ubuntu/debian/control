@@ -53,3 +53,19 @@ Multi-Arch: same
 Description: Gazebo Launch Library - Launch libraries
   Gazebo Common is a component in the Gazebo framework, a set of libraries
   designed to rapidly develop robot applications.
+
+Package: libgz-launch2
+Depends: libignition-launch2, ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: oldlibs
+Description: transitional package
+ It's recommended to use the gz packages going forward.
+
+Package: libgz-launch2-dev
+Depends: libignition-launch2-dev, ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: oldlibs
+Description: transitional package
+ It's recommended to use the gz packages going forward.
