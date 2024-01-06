@@ -1,3 +1,9 @@
+ignition-launch2 (2.3.1-1~focal) focal; urgency=medium
+
+  * ignition-launch2 2.3.1-1 release
+
+ -- Addisu Z. Taddese <addisu@openrobotics.org>  Fri, 05 Jan 2024 19:07:44 -0600
+
 ignition-launch2 (2.3.0-1~focal) focal; urgency=medium
 
   * ignition-launch2 2.3.0-1 release

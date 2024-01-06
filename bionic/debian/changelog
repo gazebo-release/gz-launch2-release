@@ -1,3 +1,9 @@
+ignition-launch2 (2.3.1-1~bionic) bionic; urgency=medium
+
+  * ignition-launch2 2.3.1-1 release
+
+ -- Addisu Z. Taddese <addisu@openrobotics.org>  Fri, 05 Jan 2024 19:07:45 -0600
+
 ignition-launch2 (2.3.0-1~bionic) bionic; urgency=medium
 
   * ignition-launch2 2.3.0-1 release
